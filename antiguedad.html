@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08111f">
+<title>Calculadora de Antigüedad</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=rTeeBIZ3Fxnoiw_qetuI4Ebih4IbgjHGIDNKwy7-4n9PFac-0-bPC45DHmkCj92Shcx3iVM4TPZjmz2SM8aRueDbsZ0qe05PiOkomA1rB5wnoMyKrQ_fBXSWvbm3uJsOPDGtIsUa09lfzJtloVPzPgAlMIv-VSURUqA9TMTXgSWqRvdB-tOK1bilAtm166MEYTXbs4eUFa696ALutqLy_88XwBLhM02Pj9t9Oln3muIyvV5jq0GFezUA3lw2SUMFV7v_xqo9ySH2jtxrJs-IV5AL7lSVcTM1-l0oAQ-0RXPf0cemoUOcTk8g_2QPA1Rk" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMDUwMDQ4MjQzYjA2NDUzZDIwMjJlYzFmYSZmbj1hbnRpZ3VlZGFkX2ZpbmFsLmh0bWwmY2Q9YXR0YWNobWVudCZ0cz00OTY0MDAmcD1mcyZjaWQ9MSZzaWc9OTZlZTliZGMxM2JiNjhmZmYzMWY5NzVmYzM4MTZhZmM0YjhkYTc3ZDE5NDA5MzUxYTRlNDI3MDFkNDBmNDEwZCZ2PTA"/><style>
+:root{--bg:#06101d;--bg2:#0b1829;--card:rgba(15,29,49,.88);--text:#f5f8fb;--muted:#9babbc;--line:rgba(255,255,255,.09);--accent:#7dd3fc;--accent2:#38bdf8;--good:#86efac;--warn:#fde68a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 12% 4%,rgba(56,189,248,.18),transparent 27%),linear-gradient(145deg,var(--bg),var(--bg2) 58%,#07131f)}
+.wrap{width:min(900px,calc(100% - 28px));margin:auto;padding:38px 0 60px}
+.hero,.panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,35,59,.9),rgba(10,24,42,.74));box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.hero{padding:32px 30px 26px;border-radius:26px}
+.eyebrow{display:inline-flex;margin-bottom:14px;padding:7px 11px;border:1px solid rgba(125,211,252,.22);border-radius:999px;color:#c8efff;background:rgba(56,189,248,.08);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2.2rem,6vw,4.5rem);line-height:.96;letter-spacing:-.055em}
+.subtitle{margin:18px 0 0;max-width:720px;color:var(--muted);line-height:1.65}
+.grid{display:grid;grid-template-columns:1fr .9fr;gap:18px;margin-top:20px}
+.panel{border-radius:22px;overflow:hidden}
+.panel-head{padding:20px 22px 0}
+.panel h2{margin:0;font-size:1.05rem}
+.panel-body{padding:18px 22px 22px}
+label{display:block;margin-bottom:8px;color:#dce8f6;font-size:.88rem;font-weight:700}
+select{width:100%;border:1px solid rgba(255,255,255,.12);outline:none;border-radius:14px;padding:15px 16px;color:var(--text);background:#12243a;font:inherit}
+button{width:100%;margin-top:18px;border:0;border-radius:14px;padding:14px 16px;cursor:pointer;color:#052033;background:linear-gradient(135deg,var(--accent),var(--accent2));font:inherit;font-weight:850}
+.result{display:none;margin-top:18px;border:1px solid rgba(134,239,172,.18);border-radius:18px;padding:20px;background:linear-gradient(135deg,rgba(34,197,94,.11),rgba(56,189,248,.06))}
+.result.show{display:block}
+.result-label{color:#a8bbcb;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.percent{margin-top:6px;font-size:clamp(3rem,9vw,5.8rem);line-height:1;font-weight:950;letter-spacing:-.07em;color:var(--good)}
+.result-text{margin-top:10px;color:#dbe9f5;line-height:1.55}
+.next{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.86rem;line-height:1.5}
+.tiers{display:grid;gap:9px}
+.tier{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid rgba(255,255,255,.07);border-radius:13px;background:rgba(255,255,255,.025)}
+.tier span{color:#cbd6e2} .tier strong{color:#e7f8ff}
+.special{border-color:rgba(253,230,138,.16);background:rgba(253,230,138,.045)} .special strong{color:var(--warn)}
+.note{margin-top:14px;padding:13px 14px;border-radius:13px;color:#9eafbf;background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.06);font-size:.82rem;line-height:1.55}
+.yearbadge{margin-top:16px;display:inline-block;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.05);color:#c8d7e6;font-size:.85rem}
+footer{margin-top:18px;text-align:center;color:#6f8092;font-size:.78rem}
+@media(max-width:760px){.wrap{padding-top:18px}.hero{padding:27px 20px 20px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow">CalenData · Herramientas</div>
+<h1>Calculadora de<br>Antigüedad</h1>
+<p class="subtitle">Introduce únicamente el año en que entraste en la empresa. La página utiliza automáticamente el año actual para calcular el porcentaje que corresponde en nómina.</p>
+<div class="yearbadge">Año actual detectado: <strong id="currentYearBadge">2026</strong></div>
+</section>
+
+<section class="grid">
+<div class="panel">
+<div class="panel-head"><h2>Calcular porcentaje</h2></div>
+<div class="panel-body">
+<label for="entryYear">Año de ingreso en la empresa</label>
+<select id="entryYear"></select>
+<button id="calculateBtn">Calcular antigüedad</button>
+
+<div class="result" id="result">
+<div class="result-label">Porcentaje de antigüedad</div>
+<div class="percent" id="percent">0%</div>
+<div class="result-text" id="resultText"></div>
+<div class="next" id="nextTier"></div>
+</div>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-head"><h2>Tramos aplicables</h2></div>
+<div class="panel-body">
+<div class="tiers">
+<div class="tier"><span>2 años</span><strong>5%</strong></div>
+<div class="tier"><span>4 años</span><strong>10%</strong></div>
+<div class="tier"><span>6 años</span><strong>15%</strong></div>
+<div class="tier"><span>11 años</span><strong>25%</strong></div>
+<div class="tier"><span>16 años</span><strong>35%</strong></div>
+<div class="tier"><span>21 años</span><strong>45%</strong></div>
+<div class="tier"><span>26 años</span><strong>55%</strong></div>
+<div class="tier special"><span>Desde julio del 28.º año</span><strong>60%</strong></div>
+</div>
+<div class="note">El día y el mes de ingreso no se tienen en cuenta. Solo importa el año. Para el tramo máximo, de enero a junio del 28.º año se mantiene el 55% y desde julio se aplica el 60%.</div>
+</div>
+</div>
+</section>
+
+<footer>CalenData · Calculadora de antigüedad</footer>
+</main>
+
+<script>
+const now = new Date();
+const currentYear = now.getFullYear();
+const currentMonth = now.getMonth() + 1;
+
+const entryYear = document.getElementById("entryYear");
+const result = document.getElementById("result");
+const percentEl = document.getElementById("percent");
+const resultText = document.getElementById("resultText");
+const nextTier = document.getElementById("nextTier");
+document.getElementById("currentYearBadge").textContent = currentYear;
+
+for(let y=currentYear; y>=1950; y--) {
+  entryYear.add(new Option(y,y));
+}
+entryYear.value = currentYear - 10;
+
+function getPercent(years) {
+  if (years > 28 || (years === 28 && currentMonth >= 7)) return 60;
+  if (years >= 26) return 55;
+  if (years >= 21) return 45;
+  if (years >= 16) return 35;
+  if (years >= 11) return 25;
+  if (years >= 6) return 15;
+  if (years >= 4) return 10;
+  if (years >= 2) return 5;
+  return 0;
+}
+
+function getNextStep(entry, years) {
+  const levels = [[2,5],[4,10],[6,15],[11,25],[16,35],[21,45],[26,55]];
+  for (const [y,p] of levels) {
+    if (years < y) return `Siguiente tramo: <strong>${p}%</strong> en <strong>${entry+y}</strong>.`;
+  }
+  if (years < 28 || (years === 28 && currentMonth < 7)) {
+    return `Siguiente y último tramo: <strong>60%</strong> desde <strong>julio de ${entry+28}</strong>.`;
+  }
+  return `Se ha alcanzado el <strong>máximo del 60%</strong>.`;
+}
+
+function calculate() {
+  const entry = Number(entryYear.value);
+  const years = currentYear - entry;
+  const pct = getPercent(years);
+
+  percentEl.textContent = pct + "%";
+  let text = `Entrada en la empresa: <strong>${entry}</strong>. En ${currentYear} computan <strong>${years} ${years===1?"año":"años"} de antigüedad</strong>.`;
+
+  if (years === 28) {
+    text += currentMonth >= 7
+      ? ` Al estar ya en julio o meses posteriores, corresponde el <strong>60%</strong>.`
+      : ` Hasta junio corresponde el <strong>55%</strong>; desde julio pasará al <strong>60%</strong>.`;
+  }
+
+  resultText.innerHTML = text;
+  nextTier.innerHTML = getNextStep(entry, years);
+  result.classList.add("show");
+}
+
+document.getElementById("calculateBtn").addEventListener("click", calculate);
+entryYear.addEventListener("change", () => result.classList.remove("show"));
+</script>
+</body>
+</html>
