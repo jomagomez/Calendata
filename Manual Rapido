@@ -1,0 +1,37 @@
+Manual rápido (uso diario)
+
+Crear o editar aviso (sin publicar aún)
+Menú → Gestor avisos
+Elige: Crear nuevo aviso o Editar aviso existente
+Elige destino (GLOBAL o empresa)
+Completa campos (título, texto, fechas, icono, etc.)
+Guarda
+Opcional: previsualiza
+Resultado: queda guardado en local (CALDATA/config/avisos.json), todavía no publicado
+Eliminar aviso
+Menú → Gestor avisos
+Elige Eliminar aviso
+Selecciona destino y aviso
+Confirma SI
+Resultado: eliminado en local (aún no publicado)
+Publicar a GitHub
+Menú → Publicar avisos
+Si todo está bien, verás confirmación de publicación
+Si falla, verás error detallado (token/permisos/API)
+Comprobar aviso en la app
+Menú → Comprobar avisos
+Si hay aviso activo y vigente, aparece popup premium
+También sirve reiniciar app
+Configurar token GitHub (solo admin)
+Menú → Token GitHub
+Pega PAT con permiso Contents: Read and write
+Guarda
+Para borrar token: escribe -
+Reglas clave para que un aviso aparezca
+activo = true
+fecha actual dentro de fecha_inicio / fecha_fin (dd/mm/yyyy)
+id no marcado como visto (si es obligatorio, se marca al aceptar)
+Compilación
+Build TRABAJADORES: sin ADMIN_BUILD
+Build ADMIN: con ADMIN_BUILD
+Verifica log de checklist al arrancar (modo y número de menús)

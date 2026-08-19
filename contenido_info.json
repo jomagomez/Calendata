@@ -1,0 +1,237 @@
+{
+  "schema_version": 2,
+  "content_version": "2026.04.13.99",
+  "updated_at_utc": "2026-04-13T12:30:00Z",
+  "default_lang": "es",
+  "theme_defaults": {
+    "font_family": "default",
+    "font_size": 16,
+    "line_spacing": 1.25,
+    "text_color": "#E7E0F2",
+    "title_color": "#FFFFFF",
+    "accent_color": "#C174E8",
+    "muted_color": "#B9AFCB"
+  },
+  "sections": {
+    "comp_festivo": {
+      "title": "Compensación de Festivos",
+      "items": [
+        {
+          "id": "comp_festivo_info_general",
+          "title": "Compensación de Festivos",
+          "summary": "Información general de prueba",
+          "content_blocks": [
+            {
+              "type": "heading",
+              "text": "Compensación de Festivos (prueba)",
+              "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" }
+            },
+            {
+              "type": "paragraph",
+              "text": "Este es un texto de prueba para validar la carga desde JSON y el render de bloques.",
+              "style": { "size": 16, "color": "#E7E0F2" }
+            }
+          ]
+        }
+      ]
+    },
+    "antiguedad": {
+      "title": "Antigüedad",
+      "items": [
+        {
+          "id": "antiguedad_tabla",
+          "title": "Antigüedad",
+          "summary": "Tramos y criterios (prueba)",
+          "content_blocks": [
+            {
+              "type": "heading",
+              "text": "Antigüedad (prueba)",
+              "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" }
+            },
+            {
+              "type": "paragraph",
+              "text": "Contenido de prueba para esta sección. Reemplázalo por el contenido real cuando quieras.",
+              "style": { "size": 16, "color": "#E7E0F2" }
+            }
+          ]
+        }
+      ]
+    },
+    "afiliate": {
+      "title": "Afíliate",
+      "items": [
+        {
+          "id": "afiliate_info",
+          "title": "Afíliate",
+          "summary": "Ventajas y contacto (prueba)",
+          "content_blocks": [
+            {
+              "type": "heading",
+              "text": "Afíliate (prueba)",
+              "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" }
+            },
+            {
+              "type": "paragraph",
+              "text": "Texto de prueba para comprobar que la app muestra correctamente el contenido.",
+              "style": { "size": 16, "color": "#E7E0F2" }
+            }
+          ]
+        }
+      ]
+    },
+    "permisos_licencias": {
+      "title": "Permisos y Licencias",
+      "items": [
+        {
+          "id": "permiso_matrimonio",
+          "title": "Matrimonio o Pareja de Hecho",
+          "summary": "Permiso por Matrimonio o Pareja de Hecho",
+          "content_blocks": [
+            { "type": "heading", "text": "Matrimonio o Pareja de Hecho (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso matrimonio.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_maternidad",
+          "title": "Maternidad / Paternidad",
+          "summary": "Permiso por Nacimiento o Adopción",
+          "content_blocks": [
+            { "type": "heading", "text": "Maternidad / Paternidad (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso maternidad/paternidad.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_lactancia",
+          "title": "Lactancia",
+          "summary": "Permiso por Lactancia",
+          "content_blocks": [
+            { "type": "heading", "text": "Lactancia (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso lactancia.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_hospitalizacion",
+          "title": "Hospitalización / Operación",
+          "summary": "Hospitalización u operación de un familiar",
+          "content_blocks": [
+            { "type": "heading", "text": "Hospitalización / Operación (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso de hospitalización.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_fallecimiento",
+          "title": "Fallecimiento de un Familiar",
+          "summary": "Permiso por Fallecimiento de familiar",
+          "content_blocks": [
+            { "type": "heading", "text": "Fallecimiento (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso por fallecimiento.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_fuerza_mayor",
+          "title": "Fuerza Mayor",
+          "summary": "Permiso por Accidente",
+          "content_blocks": [
+            { "type": "heading", "text": "Fuerza Mayor (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso por fuerza mayor.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_traslado_domicilio",
+          "title": "Traslado del domicilio habitual",
+          "summary": "Permiso por traslado de domicilio",
+          "content_blocks": [
+            { "type": "heading", "text": "Traslado de domicilio (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso por traslado de domicilio.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_asistencia_juicios",
+          "title": "Asistencia a Juicios",
+          "summary": "Permiso por asistencia a Juicios",
+          "content_blocks": [
+            { "type": "heading", "text": "Asistencia a Juicios (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso por asistencia a juicios.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "permiso_examenes",
+          "title": "Examenes",
+          "summary": "Permiso por examenes oficiales",
+          "content_blocks": [
+            { "type": "heading", "text": "Exámenes (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba del permiso por exámenes.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        }
+      ]
+    },
+    "fondo_social": {
+      "title": "Fondo Social",
+      "items": [
+        {
+          "id": "fondo_lentes",
+          "title": "Ayuda por Lentes Oculares",
+          "summary": "Ayuda por Lentes Oculares",
+          "content_blocks": [
+            { "type": "heading", "text": "Lentes Oculares (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: lentes.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "fondo_conducir",
+          "title": "Ayuda por Permisos de Conducir",
+          "summary": "Ayuda por Permisos de Conducir",
+          "content_blocks": [
+            { "type": "heading", "text": "Permiso de Conducir (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: conducir.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "fondo_guarderia",
+          "title": "Ayuda por Gastos de Guardería",
+          "summary": "Ayuda por Gastos de Guardería",
+          "content_blocks": [
+            { "type": "heading", "text": "Guardería (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: guardería.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "fondo_enfermedad",
+          "title": "Ayuda por Enfermedad",
+          "summary": "Ayuda por Enfermedad",
+          "content_blocks": [
+            { "type": "heading", "text": "Enfermedad (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: enfermedad.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "fondo_estudios",
+          "title": "Ayuda por hijos Estudiantes",
+          "summary": "Ayuda por hijos Estudiantes",
+          "content_blocks": [
+            { "type": "heading", "text": "Estudios (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: estudios.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "fondo_discapacidad",
+          "title": "Ayuda por Hijos discapacitados",
+          "summary": "Ayuda por Hijos discapacitados",
+          "content_blocks": [
+            { "type": "heading", "text": "Discapacidad (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: discapacidad.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        },
+        {
+          "id": "fondo_prestamo",
+          "title": "Prestamo",
+          "summary": "Prestamo",
+          "content_blocks": [
+            { "type": "heading", "text": "Préstamo (prueba)", "style": { "size": 22, "color": "#FFFFFF", "weight": "bold" } },
+            { "type": "paragraph", "text": "Texto de prueba de fondo social: préstamo.", "style": { "size": 16, "color": "#E7E0F2" } }
+          ]
+        }
+      ]
+    }
+  }
+}

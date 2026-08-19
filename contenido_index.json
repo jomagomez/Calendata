@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "content_version": "2026.04.13.100",
+  "updated_at_utc": "2026-04-13T18:45:00Z",
+  "default_lang": "es",
+  "theme_defaults": {
+    "font_family": "default",
+    "font_size": 16,
+    "line_spacing": 1.25,
+    "text_color": "#E7E0F2",
+    "title_color": "#FFFFFF",
+    "accent_color": "#C174E8",
+    "muted_color": "#B9AFCB"
+  },
+  "sections": [
+    { "key": "comp_festivo", "file": "contenido_comp_festivo.json" },
+    { "key": "antiguedad", "file": "contenido_antiguedad.json" },
+    { "key": "afiliate", "file": "contenido_afiliate.json" },
+    { "key": "permisos_licencias", "file": "contenido_permisos_licencias.json" },
+    { "key": "fondo_social", "file": "contenido_fondo_social.json" }
+  ]
+}

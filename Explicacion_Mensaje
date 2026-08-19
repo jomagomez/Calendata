@@ -1,0 +1,22 @@
+Entra en Gestor avisos.
+Elige Crear nuevo aviso.
+Selecciona destino:
+GLOBAL (si quieres que lo vean todos), o
+una empresa concreta (FCC, URBASER, etc.).
+Rellena:
+Título: por ejemplo Nuevo año disponible
+Texto: Ya está disponible la descarga del año 2029.
+Prioridad: por ejemplo 50
+Fecha inicio y Fecha fin: rango en el que quieres mostrarlo.
+Icono: por ejemplo ⬇ o 📢
+Botón aceptar: Descargar
+Botón cancelar: Más tarde
+Acción: descargar
+Año acción: 2029
+Mensaje activo? → SI
+Mensaje obligatorio? → NO (o SI si quieres forzar lectura)
+Mostrar botón cancelar? → SI (recomendado)
+Guarda (solo local).
+Previsualiza y corrige si hace falta.
+Cuando esté perfecto: menú → Publicar avisos.
+Reinicia app (o Comprobar avisos) para verificar que aparece.

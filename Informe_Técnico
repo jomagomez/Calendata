@@ -1,0 +1,58 @@
+Compilación dual
+
+Dos modos con #If ADMIN_BUILD:
+ADMIN: incluye herramientas de gestión de avisos.
+TRABAJADORES: no muestra ni usa herramientas admin.
+Checklist en arranque:
+Log de modo activo y número esperado de opciones en menú.
+Validado en ambos modos (17 admin, 13 trabajador).
+Gestor de avisos (solo ADMIN)
+
+Menús admin:
+Gestor avisos
+Token GitHub
+Publicar avisos
+Comprobar avisos
+Flujo del gestor:
+Primero pregunta acción: crear / editar / eliminar.
+Luego destino: GLOBAL, FCC, URBASER, MIXTO, CLD, VALORIZA, LUN-SAB 6-0.
+Internamente mapea a Tipo1..Tipo6 para JSON.
+Crear/editar:
+id automático único por fecha/hora/milisegundos.
+Campo texto multilinea grande.
+Selector de icono premium.
+Revisión antes de guardar (“Editar de nuevo”).
+Eliminar:
+Selección de aviso existente.
+Confirmación con SI/NO.
+Borrado local + aviso de resumen.
+Guardado y publicación
+
+Al crear/editar/eliminar: guarda solo en local (CALDATA/config/avisos.json).
+Publicación a GitHub solo al pulsar Publicar avisos.
+Token configurable desde app (CALDATA/config/github_token.txt).
+Diagnóstico de errores GitHub mejorado (GET/PUT + detalle).
+Resumen de conteos al guardar/publicar (GLOBAL/T1..T6).
+Lógica de notificaciones en app
+
+Lee avisos.json remoto y muestra popup premium.
+Soporta:
+mensajes_globales
+mensajes_por_empresa
+compatibilidad con mensaje_general y ultimo_anio_disponible.
+Fechas en dd/mm/yyyy.
+obligatorio corregido para no repetirse tras aceptar (respeta vistos).
+Opción Comprobar avisos para forzar consulta manual.
+Al volver a actividad, resetea bandera de sesión para no quedarse bloqueado.
+UI premium
+
+Diálogos custom con estilo unificado (tipografía/colores/botones centrados).
+Selector de opciones/iconos con botón cancelar centrado.
+Ajustes de layout para evitar recortes de texto.
+Inicialización de datos anuales
+
+En primera instalación:
+si no hay años instalados, se siembra siempre el año actual con bases de Assets.
+opcionalmente también el año de Assets/ano.txt si es distinto y válido.
+Evita bloqueo por cambio de año.
+Permite actualizar luego con paquete anual descargable.
