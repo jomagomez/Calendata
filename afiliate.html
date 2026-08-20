@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <title>Afíliate a UGT</title>
+  <style>
+    :root{
+      --bg:#06101d;
+      --bg2:#0c1b2e;
+      --card:rgba(15,30,50,.9);
+      --soft:rgba(255,255,255,.035);
+      --text:#f5f8fb;
+      --muted:#9dafc1;
+      --line:rgba(255,255,255,.09);
+      --accent:#7dd3fc;
+      --accent2:#38bdf8;
+      --good:#86efac;
+      --gold:#fde68a;
+      --shadow:0 24px 70px rgba(0,0,0,.36);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 2%,rgba(56,189,248,.18),transparent 28%),
+        radial-gradient(circle at 88% 18%,rgba(125,211,252,.10),transparent 24%),
+        linear-gradient(145deg,var(--bg),var(--bg2) 58%,#07131f);
+    }
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 80%);
+    }
+
+    .wrap{
+      width:min(920px,calc(100% - 28px));
+      margin:0 auto;
+      padding:
+        calc(38px + env(safe-area-inset-top, 0px))
+        0
+        calc(56px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:34px 30px 28px;
+      border:1px solid var(--line);
+      border-radius:27px;
+      background:linear-gradient(145deg,rgba(18,35,59,.92),rgba(10,24,42,.76));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:230px;
+      height:230px;
+      right:-70px;
+      top:-80px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(56,189,248,.17),transparent 70%);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      margin-bottom:15px;
+      padding:7px 11px;
+      border:1px solid rgba(125,211,252,.22);
+      border-radius:999px;
+      color:#c8efff;
+      background:rgba(56,189,248,.08);
+      font-size:.77rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      position:relative;
+      z-index:1;
+      margin:0;
+      font-size:clamp(2.5rem,7vw,4.9rem);
+      line-height:.95;
+      letter-spacing:-.055em;
+    }
+
+    .subtitle{
+      position:relative;
+      z-index:1;
+      margin:18px 0 0;
+      max-width:700px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:1rem;
+    }
+
+    .content{
+      display:grid;
+      gap:18px;
+      margin-top:20px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:var(--card);
+      box-shadow:0 18px 48px rgba(0,0,0,.24);
+      overflow:hidden;
+      backdrop-filter:blur(12px);
+    }
+
+    .card-body{padding:24px}
+
+    .intro{
+      padding:20px 22px;
+      border:1px solid rgba(125,211,252,.14);
+      border-radius:18px;
+      background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(255,255,255,.025));
+    }
+
+    .intro strong{
+      display:block;
+      margin-bottom:7px;
+      color:#e9f8ff;
+      font-size:1.05rem;
+    }
+
+    .intro p{
+      margin:0;
+      color:#c7d4df;
+      line-height:1.65;
+    }
+
+    .benefits-title{
+      margin:24px 0 12px;
+      font-size:.83rem;
+      font-weight:900;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color:#8fa3b7;
+    }
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+
+    .benefit{
+      position:relative;
+      padding:16px 16px 16px 46px;
+      min-height:92px;
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:16px;
+      background:var(--soft);
+      color:#dce7f2;
+      line-height:1.5;
+      font-size:.92rem;
+    }
+
+    .benefit:before{
+      content:"✓";
+      position:absolute;
+      left:15px;
+      top:15px;
+      width:22px;
+      height:22px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:#062314;
+      background:var(--good);
+      font-size:.76rem;
+      font-weight:950;
+    }
+
+    .benefit strong{color:#fff}
+
+    .cta{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:21px 22px;
+      border-radius:18px;
+      border:1px solid rgba(253,230,138,.15);
+      background:rgba(253,230,138,.045);
+    }
+
+    .cta-icon{
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:rgba(253,230,138,.11);
+      font-size:1.25rem;
+    }
+
+    .cta strong{
+      display:block;
+      color:#fff2b8;
+      margin-bottom:5px;
+      font-size:1.02rem;
+    }
+
+    .cta p{
+      margin:0;
+      color:#c5d0dc;
+      line-height:1.6;
+      font-size:.94rem;
+    }
+
+    .note{
+      margin-top:14px;
+      color:#8294a7;
+      text-align:center;
+      font-size:.78rem;
+      line-height:1.45;
+    }
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:#6f8193;
+      font-size:.78rem;
+    }
+
+    @media(max-width:680px){
+      .wrap{
+        width:min(100% - 16px,920px);
+        padding-top:calc(42px + env(safe-area-inset-top, 0px));
+        padding-bottom:calc(56px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .hero{
+        padding:28px 20px 22px;
+        border-radius:22px;
+      }
+
+      .card-body{padding:18px}
+      .benefits{grid-template-columns:1fr}
+      .benefit{min-height:0}
+      .cta{padding:17px}
+    }
+  </style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">CalenData · Información Sindical</div>
+    <h1>Afíliate<br>a UGT</h1>
+    <p class="subtitle">
+      Afiliarte es sencillo: ponte en contacto con tus delegados de UGT en el centro de trabajo.
+      Ellos te ayudarán a cumplimentar la solicitud y tramitarán el alta.
+    </p>
+  </section>
+
+  <section class="content">
+
+    <article class="card">
+      <div class="card-body">
+
+        <div class="intro">
+          <strong>Una gestión sencilla</strong>
+          <p>
+            La cuota sindical puede descontarse directamente de la nómina, evitando tener que
+            realizar el pago de forma separada.
+          </p>
+        </div>
+
+        <div class="benefits-title">Servicios y ventajas</div>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <strong>Asesoramiento laboral</strong><br>
+            Acceso a asesoramiento laboral en condiciones económicas favorables.
+          </div>
+
+          <div class="benefit">
+            <strong>Asistencia jurídica</strong><br>
+            Con más de 2 años de afiliación, gratuidad en la asistencia y tramitación jurídica.
+          </div>
+
+          <div class="benefit">
+            <strong>Protección ante sanciones</strong><br>
+            Posibilidad de que tus representantes sindicales sean escuchados antes de una sanción o despido.
+          </div>
+
+          <div class="benefit">
+            <strong>Seguro por accidente</strong><br>
+            Cobertura en caso de fallecimiento por accidente para personas afiliadas con más de un año y al corriente de pago.
+          </div>
+
+          <div class="benefit">
+            <strong>Formación</strong><br>
+            Acceso a formación sindical o técnica impartida por UGT de Catalunya.
+          </div>
+
+          <div class="benefit">
+            <strong>Prevención de riesgos</strong><br>
+            Asesoramiento en PRL, medio ambiente, movilidad y servicios sociales.
+          </div>
+
+          <div class="benefit">
+            <strong>Servicios y ofertas</strong><br>
+            Acceso preferente a determinados servicios y ofertas de UGT de Catalunya y sus organismos.
+          </div>
+
+          <div class="benefit">
+            <strong>Atención sindical</strong><br>
+            Atención en sedes de UGT de Catalunya o en tu propia sección sindical.
+          </div>
+
+          <div class="benefit">
+            <strong>Información</strong><br>
+            Acceso a información sobre actividad sindical e institucional.
+          </div>
+
+          <div class="benefit">
+            <strong>Participación</strong><br>
+            Participación en debates y decisiones sindicales, especialmente en procesos de negociación colectiva.
+          </div>
+
+          <div class="benefit">
+            <strong>Elecciones sindicales</strong><br>
+            Posibilidad de presentarte como candidato o candidata, salvo limitación legal.
+          </div>
+
+          <div class="benefit">
+            <strong>Deducción en el IRPF</strong><br>
+            La cuota sindical puede deducirse en la declaración del IRPF.
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <div class="cta">
+      <div class="cta-icon">🤝</div>
+      <div>
+        <strong>¿Quieres afiliarte?</strong>
+        <p>
+          Ponte en contacto con tus delegados de UGT en el centro de trabajo.
+          Te facilitarán el formulario y realizarán la tramitación.
+        </p>
+      </div>
+    </div>
+
+    <div class="note">
+      Información resumida a partir del contenido de la Sección Sindical UGT.
+    </div>
+
+  </section>
+
+  <footer>CalenData · Información sindical</footer>
+
+</main>
+
+</body>
+</html>
