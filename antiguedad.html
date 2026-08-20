@@ -42,22 +42,22 @@ footer{margin-top:18px;text-align:center;color:#6f8092;font-size:.78rem}
 <body>
 <main class="wrap">
 <section class="hero">
-<div class="eyebrow">CalenData Â· Herramientas</div>
-<h1>Calculadora de<br>AntigÃ¼edad</h1>
-<p class="subtitle">Introduce Ãºnicamente el aÃ±o en que entraste en la empresa. La pÃ¡gina utiliza automÃ¡ticamente el aÃ±o actual para calcular el porcentaje que corresponde en nÃ³mina.</p>
-<div class="yearbadge">AÃ±o actual detectado: <strong id="currentYearBadge">2026</strong></div>
+<div class="eyebrow">CalenData · Herramientas</div>
+<h1>Calculadora de<br>Antigüedad</h1>
+<p class="subtitle">Introduce únicamente el año en que entraste en la empresa. La página utiliza automáticamente el año actual para calcular el porcentaje que corresponde en nómina.</p>
+<div class="yearbadge">Año actual detectado: <strong id="currentYearBadge">2026</strong></div>
 </section>
 
 <section class="grid">
 <div class="panel">
 <div class="panel-head"><h2>Calcular porcentaje</h2></div>
 <div class="panel-body">
-<label for="entryYear">AÃ±o de ingreso en la empresa</label>
+<label for="entryYear">Año de ingreso en la empresa</label>
 <select id="entryYear"></select>
-<button id="calculateBtn">Calcular antigÃ¼edad</button>
+<button id="calculateBtn">Calcular antigüedad</button>
 
 <div class="result" id="result">
-<div class="result-label">Porcentaje de antigÃ¼edad</div>
+<div class="result-label">Porcentaje de antigüedad</div>
 <div class="percent" id="percent">0%</div>
 <div class="result-text" id="resultText"></div>
 <div class="next" id="nextTier"></div>
@@ -69,21 +69,21 @@ footer{margin-top:18px;text-align:center;color:#6f8092;font-size:.78rem}
 <div class="panel-head"><h2>Tramos aplicables</h2></div>
 <div class="panel-body">
 <div class="tiers">
-<div class="tier"><span>2 aÃ±os</span><strong>5%</strong></div>
-<div class="tier"><span>4 aÃ±os</span><strong>10%</strong></div>
-<div class="tier"><span>6 aÃ±os</span><strong>15%</strong></div>
-<div class="tier"><span>11 aÃ±os</span><strong>25%</strong></div>
-<div class="tier"><span>16 aÃ±os</span><strong>35%</strong></div>
-<div class="tier"><span>21 aÃ±os</span><strong>45%</strong></div>
-<div class="tier"><span>26 aÃ±os</span><strong>55%</strong></div>
-<div class="tier special"><span>Desde julio del 28.Âº aÃ±o</span><strong>60%</strong></div>
+<div class="tier"><span>2 años</span><strong>5%</strong></div>
+<div class="tier"><span>4 años</span><strong>10%</strong></div>
+<div class="tier"><span>6 años</span><strong>15%</strong></div>
+<div class="tier"><span>11 años</span><strong>25%</strong></div>
+<div class="tier"><span>16 años</span><strong>35%</strong></div>
+<div class="tier"><span>21 años</span><strong>45%</strong></div>
+<div class="tier"><span>26 años</span><strong>55%</strong></div>
+<div class="tier special"><span>Desde julio del 28.º año</span><strong>60%</strong></div>
 </div>
-<div class="note">El dÃ­a y el mes de ingreso no se tienen en cuenta. Solo importa el aÃ±o. Para el tramo mÃ¡ximo, de enero a junio del 28.Âº aÃ±o se mantiene el 55% y desde julio se aplica el 60%.</div>
+<div class="note">El día y el mes de ingreso no se tienen en cuenta. Solo importa el año. Para el tramo máximo, de enero a junio del 28.º año se mantiene el 55% y desde julio se aplica el 60%.</div>
 </div>
 </div>
 </section>
 
-<footer>CalenData Â· Calculadora de antigÃ¼edad</footer>
+<footer>CalenData · Calculadora de antigüedad</footer>
 </main>
 
 <script>
@@ -121,9 +121,9 @@ function getNextStep(entry, years) {
     if (years < y) return `Siguiente tramo: <strong>${p}%</strong> en <strong>${entry+y}</strong>.`;
   }
   if (years < 28 || (years === 28 && currentMonth < 7)) {
-    return `Siguiente y Ãºltimo tramo: <strong>60%</strong> desde <strong>julio de ${entry+28}</strong>.`;
+    return `Siguiente y último tramo: <strong>60%</strong> desde <strong>julio de ${entry+28}</strong>.`;
   }
-  return `Se ha alcanzado el <strong>mÃ¡ximo del 60%</strong>.`;
+  return `Se ha alcanzado el <strong>máximo del 60%</strong>.`;
 }
 
 function calculate() {
@@ -132,12 +132,12 @@ function calculate() {
   const pct = getPercent(years);
 
   percentEl.textContent = pct + "%";
-  let text = `Entrada en la empresa: <strong>${entry}</strong>. En ${currentYear} computan <strong>${years} ${years===1?"aÃ±o":"aÃ±os"} de antigÃ¼edad</strong>.`;
+  let text = `Entrada en la empresa: <strong>${entry}</strong>. En ${currentYear} computan <strong>${years} ${years===1?"año":"años"} de antigüedad</strong>.`;
 
   if (years === 28) {
     text += currentMonth >= 7
       ? ` Al estar ya en julio o meses posteriores, corresponde el <strong>60%</strong>.`
-      : ` Hasta junio corresponde el <strong>55%</strong>; desde julio pasarÃ¡ al <strong>60%</strong>.`;
+      : ` Hasta junio corresponde el <strong>55%</strong>; desde julio pasará al <strong>60%</strong>.`;
   }
 
   resultText.innerHTML = text;
